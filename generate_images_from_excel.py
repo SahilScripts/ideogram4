@@ -33,8 +33,8 @@ EXCEL_FILENAME = "scenes.xlsx"
 # Skip image generation if the output file already exists.
 SKIP_EXISTING = True
 # Inference settings mirrored from run_inference.py.
-OUTPUT_WIDTH = 1024
-OUTPUT_HEIGHT = 1024
+OUTPUT_WIDTH = 1920
+OUTPUT_HEIGHT = 1088
 SAMPLER_PRESET = "V4_QUALITY_48"
 SEED = 0
 USE_MAGIC_PROMPT = True
