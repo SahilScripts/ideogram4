@@ -33,8 +33,8 @@ EXCEL_FILENAME = "scenes.xlsx"
 # Skip image generation if the output file already exists.
 SKIP_EXISTING = True
 # Inference settings mirrored from run_inference.py.
-OUTPUT_WIDTH = 1920
-OUTPUT_HEIGHT = 1088
+OUTPUT_WIDTH = 1536
+OUTPUT_HEIGHT = 864
 SAMPLER_PRESET = "V4_QUALITY_48"
 SEED = 0
 USE_MAGIC_PROMPT = True
@@ -100,7 +100,7 @@ def _expand_prompt(prompt: str, width: int, height: int) -> str:
     aspect_ratio = aspect_ratio_from_size(width, height)
     magic_prompt = MAGIC_PROMPTS[MAGIC_PROMPT_MODEL](api_key=IDEOGRAM_API_KEY)  # type: ignore[call-arg]
     logging.info("Expanding prompt with %s for aspect ratio %s", MAGIC_PROMPT_MODEL, aspect_ratio)
-    return magic_prompt.expand(prompt, aspect_ratio=aspect_ratio)
+    return magic_prompt.expand(prompt, aspect_ratio="AUTO")
 
 
 def _generate_images(pipe: Ideogram4Pipeline, prompt: str):
